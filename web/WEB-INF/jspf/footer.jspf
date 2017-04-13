@@ -1,0 +1,37 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+    <section id="footer-sec" >
+             
+            <div class="container">
+           <div class="row  pad-bottom" >
+            <div class="col-md-4">
+                <h4> <strong>Sobre nós</strong> </h4>
+                            <p>
+                                Nosso objetivo é ajudar nossos clientes através 
+                         de consultorias financeiras.
+                                Temos mais de 35 anos de experiência no mercado 
+                                financeiro e...
+                            </p>
+                <a href="#" >Mais</a>
+                </div>
+               <div class="col-md-4">
+                    <h4> <strong>Links sociais</strong> </h4>
+                   <p>
+                     <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
+                        <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
+                        <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
+                       <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
+                   </p>
+                </div>
+               <div class="col-md-4">
+                   <h4> <strong>Localização</strong> </h4>
+                            <p>
+                               Praça 19 de Janeiro, <br />
+                               Praia Grande - SP  <br />
+                               CEP - 10909094
+                            </p>
+                    <a href="#" class="btn btn-primary" >Contato</a>
+                </div>
+               </div>
+            </div>
+    </section>
