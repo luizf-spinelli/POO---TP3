@@ -23,31 +23,31 @@
         <br/><br/>
         <section class="home">
         <div class="container" style="align-content: center">
-        <h3>SAC</h3>
+        <h3>SAA</h3>
         <hr/>
         <%
-            int p=10;
+            int p=0;
             try{p = Integer.parseInt(request.getParameter("p"));}
             catch(Exception e){}
-            int v=0;
-            try{v = Integer.parseInt(request.getParameter("v"));}
+            float v=0;
+            try{v = Float.parseFloat(request.getParameter("v"));}
             catch(Exception e){}
-            int j=0;
-            try{j = Integer.parseInt(request.getParameter("j"));}
+            float j=0;
+            try{j = Float.parseFloat(request.getParameter("j"));}
             catch(Exception e){}
         %>
         <form>
         <table>
             <tr>
-                <td>Período(meses): </td>
+                <td> Período(meses): </td>
                 <td><input type="number" name="p" value="<%=p%>"/></td>
             </tr>
             <tr>
-                <td>Valor(R$): </td>
+                <td> Valor(R$): </td>
                 <td><input type="number" name="v" value="<%=v%>"/></td>
             </tr>
             <tr>
-                <td>Juros(%a.m.): </td>
+                <td> Juros(%a.m.): </td>
                 <td><input type="number" name="j" value="<%=j%>"/><td>
             </tr>
             <tr>
@@ -59,32 +59,40 @@
         <hr/>
         <table border="1px">
             <tr>
-                <td> Mês </td>
-                <td> Amortização (R$) </td>
-                <td> Juros (R$) </td>
-                <td> Dívida (R$) </td>
+                <td align=center> Mês </td>
+                <td align=center> Saldo Devedor (R$) </td>
+                <td align=center> Amortização (R$) </td>
+                <td align=center> Juros (R$) </td>
+                <td align=center> Prestação (R$) </td>
             </tr>
             <%for(int i=0; i<=p; i++){%>
             <tr>
                 <td><%=i%></td>
                 <%if(i==p){
-                out.println("<td>"+v+"</td>");
+                out.println("<td align=right>"+0+"</td>");
                 }
                 else{
-                out.println("<td>"+0+"</td>");
-                }%>
-                <%if(i!=0){
-                out.println("<td>"+v*j*0.01+"</td>");
-                }
-                else{
-                out.println("<td>"+0+"</td>");
+                out.println("<td align=right>"+v+"</td>");
                 }%>
                 <%if(i==p){
-                out.println("<td>"+0+"</td>");
+                out.println("<td align=right>"+v+"</td>");
                 }
                 else{
-                out.println("<td>"+v+"</td>");
+                out.println("<td align=right>"+0+"</td>");
                 }%>
+                <%if(i!=0){
+                out.println("<td align=right>"+v*j*0.01+"</td>");
+                }
+                else{
+                out.println("<td align=right>"+0+"</td>");
+                }%>
+                <%if(i<p){
+                out.println("<td align=right>"+v*j*0.01+"</td>");
+                }
+                else{
+                out.println("<td align=right>"+((v*j*0.01)+v)+"</td>");
+                }%>
+                
             </tr>
             <%}%>
         </table>
