@@ -40,7 +40,7 @@
              <div class="row text-center pad-row">
             <div class="col-md-4  col-sm-4">
                  <i class="fa fa-plus  fa-4x"></i>
-                            <h4> <strong>Sistema de amortização americano</strong> </h4>
+                            <h4> <strong>Sistema de Amortização Americano</strong> </h4>
                             <p>
                                 O SAC é uma forma de pagamento de empréstimos que
                                 se caracteriza pelo pagamento apenas dos juros da
@@ -62,7 +62,7 @@
                 </div>
             <div class="col-md-4  col-sm-4">
                   <i class="fa fa-plus  fa-4x"></i>
-                            <h4> <strong>Sistema de amortização constante</strong> </h4>
+                            <h4> <strong>Sistema de Amortização Constante</strong> </h4>
                             <p>
                                 Neste sistema o saldo devedor é reembolsado em 
                                 valores de amortização iguais. Desta forma, no 
