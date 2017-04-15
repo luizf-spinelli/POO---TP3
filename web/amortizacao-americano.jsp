@@ -44,20 +44,16 @@
         <form>
         <table>
             <tr>
-                <td> Período(meses): </td>
-                <td><input type="number" name="p" value="<%=p%>"/></td>
+                <td align="right"> Período(meses) <input type="number" name="p" placeholder="ex: 12"/></td>
             </tr>
             <tr>
-                <td> Valor(R$): </td>
-                <td><input type="number" step="0.01" name="v" value="<%=v%>"/></td>
+                <td align="right"> Valor(R$) <input type="number" step="0.01" name="v" placeholder="ex: 12000,67"/></td>
             </tr>
             <tr>
-                <td> Juros(%a.m.): </td>
-                <td><input type="number" step="0.01" name="j" value="<%=j%>"/><td>
+                <td align="right"> Juros(%a.m.) <input type="number" step="0.01" name="j" placeholder="ex: 12,5"></td>
             </tr>
             <tr>
-                <td><input type="submit" value="Gerar"/></td>
-                <td><input type="reset" value="Limpar"/></td>
+                <td align="center"><br><input type="submit" value="Gerar"/></br></td>                
             </tr>
         </table>
         </form>
@@ -72,7 +68,7 @@
             </tr>
             <%for(int i=0; i<=p; i++){%>
             <tr>
-                <td><%=i%></td>
+                <td align="center"><%=i%></td>
                 <%if(i==p){
                 out.println("<td align=right>" + cv.format(0) + "</td>");
                 }
