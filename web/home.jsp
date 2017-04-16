@@ -29,7 +29,7 @@
        <h4>César Cesario:</h4><p> Responsável pelo desenvolvimento de...</p>
        <h4>Felipe Lima:</h4><p> Responsável pelo desenvolvimento de...</p>
        <h4>Luiz Spinelli:</h4><p> Responsável pelo desenvolvimento da home, da página SAA e layout padrão.</p>
-       <h4>Raul Silva:</h4><p> Responsável pelo desenvolvimento de...</p>
+       <h4>Raul Silva:</h4><p> Responsável pelo desenvolvimento da página SAC e testes em geral.</p>
        <h4>Weslley Felizardo:</h4><p> Responsável pelo desenvolvimento de...</p>
    </div>
    </section>
