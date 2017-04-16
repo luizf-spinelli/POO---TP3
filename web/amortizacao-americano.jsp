@@ -38,8 +38,8 @@
             float j=0;
             try{j = Float.parseFloat(request.getParameter("j"));}
             catch(Exception e){}
-            DecimalFormat cv = new DecimalFormat("#.00"); 
-            DecimalFormat cj = new DecimalFormat("#.00");
+            DecimalFormat cv = new DecimalFormat("#0.00"); 
+            DecimalFormat cj = new DecimalFormat("#0.00");
         %>
         <form>
         <table>
@@ -64,7 +64,6 @@
                 <td align=center><b> Saldo Devedor (R$) </b></td>
                 <td align=center><b> Amortização (R$) </b></td>
                 <td align=center><b> Juros (R$) </b></td>
-                <td align=center><b> Prestação (R$) </b></td>
             </tr>
             <%for(int i=0; i<=p; i++){%>
             <tr>
@@ -86,14 +85,7 @@
                 }
                 else{
                 out.println("<td align=right>" + cj.format(0) + "</td>");
-                }%>
-                <%if(i<p){
-                out.println("<td align=right>" + cj.format(v*j*0.01) + "</td>");
-                }
-                else{
-                out.println("<td align=right>" + cj.format(((v*j*0.01)+v)) + "</td>");
-                }%>
-                
+                }%>                
             </tr>
             <%}%>
         </table>

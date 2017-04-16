@@ -40,8 +40,9 @@
             catch(Exception e){}
             float asd = v;
             float aj = v;
-            DecimalFormat cv = new DecimalFormat("#.00"); 
-            DecimalFormat cj = new DecimalFormat("#.00");
+            DecimalFormat cv = new DecimalFormat("#0.00"); 
+            DecimalFormat cj = new DecimalFormat("#0.00");
+            float totalJuros = 0;
         %>
         <form>
         <table>
@@ -68,7 +69,14 @@
                 <td align=center><b> Juros (R$) </b></td>
                 <td align=center><b> Prestação (R$) </b></td>
             </tr>
-            <%for(int i=1; i<=p; i++){%>
+            <tr>
+                <td align=center>0</td>
+                <td align=right><%=cv.format(v)%></td>
+                <td align=right><%=cv.format(0)%></td>
+                <td align=right><%=cv.format(0)%></td>
+                <td align=right><%=cv.format(0)%></td>                
+            </tr>
+            <%for(int i=1; i<=p; i++){%>             
             <tr>
                 <td align="center"><%=i%></td>
                 <%if(i==p){
@@ -85,9 +93,11 @@
                 }%>
                 <%if(i<p){
                 out.println("<td align=right>" + cj.format((asd +(v/p))*(j/100)) + "</td>");
+                totalJuros = totalJuros + ((asd +(v/p))*(j/100));
                 }
                 else{
                 out.println("<td align=right>" + cj.format((v/p)*(j/100)) + "</td>");
+                totalJuros = totalJuros + ((v/p)*(j/100));
                 }%>
                 <%if(i<p){
                 out.println("<td align=right>" + cj.format((v/p)+ (asd +(v/p))*(j/100)) + "</td>");
@@ -103,10 +113,10 @@
         <table>
             <tr>
                 <td>O total de juros é de:</td>
-                <td align=right><b>R$ <%=cj.format(p*v*j*0.01)%></b></td>
+                <td align=right><b>R$ <%=cj.format(totalJuros)%></b></td>
             </tr>
                 <td>O total a pagar é de:</td>
-                <td align=right><b>R$ <%=cv.format((p*v*j*0.01)+v)%></b></td>
+                <td align=right><b>R$ <%=cv.format(totalJuros + v)%></b></td>
         </table>
         </div>
         </section>
