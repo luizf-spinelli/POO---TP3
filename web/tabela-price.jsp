@@ -4,30 +4,136 @@
     Author     : Cleide
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="br.com.fatecpg.tabelaPrice.TabelaPrice"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Tabela Price</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />    
-    <!-- GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <![endif]-->
+        <title>Tabela Price</title>
+        <!-- BOOTSTRAP CORE STYLE CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <!-- FONTAWESOME STYLE CSS -->
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLE CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" />    
+        <!-- GOOGLE FONT -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    </head>    
     <body>
         <%@include file="WEB-INF/jspf/menu.jspf"%>
-        <h1>Hello World!</h1>
+        <br/><br/><br/>
+        <div class="container">
+            <h2>Cálculo Financiamento PRICE</h2><br/>
+            <h5>Cálculo de estimativa de valor de uma prestação a ser paga em um financiamento/empréstimo baseado na tabela PRICE.</h5>
+        </div>
+        <br/><br/>
+        <%
+            TabelaPrice tabelaPrice = null;
+            DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+            int numeroParcelas = 0;
+            double valorParcela = 0;
+            boolean erro = false;
+
+            try {
+                double valor = Double.parseDouble(request.getParameter("txtValor"));
+                double entrada = Double.parseDouble(request.getParameter("txtEntrada"));
+                numeroParcelas = Integer.parseInt(request.getParameter("txtPrestacoes"));
+                double taxa = Double.parseDouble(request.getParameter("txtTaxa"));
+
+                tabelaPrice = new TabelaPrice(valor, entrada, taxa, numeroParcelas);
+                valorParcela = tabelaPrice.calcularParcelas();
+            } catch (Exception e) {
+                erro = true;
+            }
+        %>
+
+        <div class="fundo container">
+            <br/>
+            <form class="form-horizontal" method="post">
+                <div class="form-group">
+                    <label for="txtValor" class="col-sm-2 control-label">Valor</label>
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" name="txtValor" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtEntrada" class="col-sm-2 control-label">Entrada</label>
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" name="txtEntrada" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtPrestacoes" class="col-sm-2 control-label">Número de prestações</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="txtPrestacoes" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtTaxa" class="col-sm-2 control-label">Taxa de Juros (% ao mês)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="txtTaxa" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Calcular</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <% if (!erro) { %>
+        <div class="container">
+            <h2>Resultado:</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table">
+                        <tr>
+                            <th>Mes</th>
+                            <th>Prestação</th>
+                            <th>Juros</th>
+                            <th>Amortização</th>
+                            <th>Saldo devedor</th>
+                        </tr>
+
+                        <% for (int i = 0; i < numeroParcelas; i++) {%>
+                        <tr>
+                            <td><%= (i + 1)%></td>
+                            <td><%= decimalFormat.format(valorParcela)%></td>
+                            <td><%= decimalFormat.format(tabelaPrice.calcularJuros())%></td>
+                            <td><%= decimalFormat.format(tabelaPrice.calcularAmortizacao())%></td>
+                            <td><%= decimalFormat.format(tabelaPrice.calcularSaldoDevedor())%></td>
+                        </tr>
+                        <% }%>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <span><h4>Saldo devedor: <%= decimalFormat.format(tabelaPrice.getValorPresente())%></h4></span>
+                    <br/>
+                    <span><h4>Total prestação: <%= decimalFormat.format(numeroParcelas * valorParcela)%></h4></span>
+                    <span><h4>Total juros: <%= decimalFormat.format(tabelaPrice.getTotalJuros())%> </h4></span>
+                    <span><h4>Total amortização: <%= decimalFormat.format(tabelaPrice.getTotalAmortizacao()) %> </h4></span>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        
+        <br/><br/><br/>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
         <script src="assets/plugins/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
