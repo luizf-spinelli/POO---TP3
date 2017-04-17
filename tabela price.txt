@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+                <title>Tabels Price </title>
+        
+    </head>
+    <body onclick="calcularTabela()">
+        <h1>Tabela Price</h1>
+        <fieldset>
+        <form name="RecebeInf">
+            
+            Presente valor: <input type="number" name="valTotal" min="1" required><br/>
+            Numero de parcelas: <input type="number" name="parcelas" min="1" max="100" required><br/>
+            Juros: <input type="number" name="juros" min="0" max="100" required><br/>
+            <br/>
+            <button onclick="calcularTabela()">Calcular</button>
+        </form>
+            <script type="text/javascript">
+            
+            function calcularTabela(){
+              
+            var valor = document.getElementById("valTotal").value;
+            var qtde = document.getElementById("parcelas").value;
+            var taxaJuros = document.getElementById("juros").value;
+            
+            }
+   
+        <script/>
+
+        </fieldset>
+            
+    </body>
+</html>
