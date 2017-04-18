@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="v" class="col-sm-2 control-label">Valor(R$)</label>
+                        <label for="v" class="col-sm-2 control-label">Valor</label>
                         <div class="col-sm-2">
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Gerar</button>
+                            <button type="submit" class="btn btn-success">Calcular</button>
                         </div>
                     </div>
                 </form>

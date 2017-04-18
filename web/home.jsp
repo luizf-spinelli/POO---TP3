@@ -26,11 +26,11 @@
    <!--/.NAVBAR END-->
    <section id="pp_full_res">
    <div class="container" style="text-align:center">
-       <h4>Cesar Cesario:</h4><p> Responsável pelo desenvolvimento da Home</p>
+       <h4>Cesar Cesario:</h4><p> Responsável pelo desenvolvimento da página Home</p>
        <h4>Felipe Lima:</h4><p> Responsável pelo desenvolvimento de includes Menu e Rodapé</p>
-       <h4>Luiz Spinelli:</h4><p> Responsável pelo desenvolvimento da home, da página SAA e layout padrão.</p>
+       <h4>Luiz Spinelli:</h4><p> Responsável pelo desenvolvimento da página SAA e layout padrão.</p>
        <h4>Raul Silva:</h4><p> Responsável pelo desenvolvimento da página SAC e testes em geral.</p>
-       <h4>Weslley Felizardo:</h4><p> Responsável pelo desenvolvimento da Price</p>
+       <h4>Weslley Felizardo:</h4><p> Responsável pelo desenvolvimento da página da Tabela Price</p>
    </div>
    </section>
    <hr/>

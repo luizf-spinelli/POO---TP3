@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="txtTaxa" class="col-sm-2 control-label">Taxa de Juros (% ao mês)</label>
+                    <label for="txtTaxa" class="col-sm-2 control-label">Taxa de Juros (%a.m.)</label>
                     <div class="col-sm-2">
                         <input type="text" class="form-control" name="txtTaxa" placeholder="">
                     </div>
