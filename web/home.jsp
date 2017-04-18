@@ -26,11 +26,11 @@
    <!--/.NAVBAR END-->
    <section id="pp_full_res">
    <div class="container" style="text-align:center">
-       <h4>César Cesario:</h4><p> Responsável pelo desenvolvimento de...</p>
-       <h4>Felipe Lima:</h4><p> Responsável pelo desenvolvimento de...</p>
+       <h4>Cesar Cesario:</h4><p> Responsável pelo desenvolvimento da Home</p>
+       <h4>Felipe Lima:</h4><p> Responsável pelo desenvolvimento de includes Menu e Rodapé</p>
        <h4>Luiz Spinelli:</h4><p> Responsável pelo desenvolvimento da home, da página SAA e layout padrão.</p>
        <h4>Raul Silva:</h4><p> Responsável pelo desenvolvimento da página SAC e testes em geral.</p>
-       <h4>Weslley Felizardo:</h4><p> Responsável pelo desenvolvimento de...</p>
+       <h4>Weslley Felizardo:</h4><p> Responsável pelo desenvolvimento da Price</p>
    </div>
    </section>
    <hr/>
@@ -41,28 +41,33 @@
             <div class="col-md-4  col-sm-4">
                  <i class="fa fa-plus  fa-4x"></i>
                             <h4> <strong>Sistema de Amortização Americano</strong> </h4>
+                            
                             <p>
-                                O SAC é uma forma de pagamento de empréstimos que
-                                se caracteriza pelo pagamento apenas dos juros da
+                                O SAC é uma forma de pagamento de empréstimos
+                                caracterizada pelo pagamento apenas dos juros da
                                 dívida, deixando o valor da dívida constante, que
                                 pode ser paga em apenas um único pagamento.
                             </p>
+
                        <a href="amortizacao-americano.jsp" class="btn btn-primary" >Ir</a>    
                 </div>
              <div class="col-md-4  col-sm-4">
                  <i class="fa fa-plus  fa-4x"></i>
                             <h4> <strong>Tabela PRICE</strong> </h4>
+                            <br/>
                             <p>
                                 Tabela Price, também chamado de sistema francês 
                                 de amortização, é um método usado em amortização
                                 de empréstimo cuja principal característica é 
                                 apresentar prestações (ou parcelas) iguais.
                             </p>
+                          
                            <a href="tabela-price.jsp" class="btn btn-primary" >Ir</a>
                 </div>
             <div class="col-md-4  col-sm-4">
                   <i class="fa fa-plus  fa-4x"></i>
                             <h4> <strong>Sistema de Amortização Constante</strong> </h4>
+                            <br/>
                             <p>
                                 Neste sistema o saldo devedor é reembolsado em 
                                 valores de amortização iguais. Desta forma, no 
