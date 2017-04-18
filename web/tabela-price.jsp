@@ -65,7 +65,7 @@
                     <div class="col-sm-2">
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
-                            <input type="text" class="form-control" name="txtValor" placeholder="">
+                            <input type="number" class="form-control" step="0.01" name="txtValor" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="col-sm-2">
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
-                            <input type="text" class="form-control" name="txtEntrada" placeholder="">
+                            <input type="number" class="form-control" step="0.01" name="txtEntrada" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label for="txtTaxa" class="col-sm-2 control-label">Taxa de Juros (%a.m.)</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" name="txtTaxa" placeholder="">
+                        <input type="number" class="form-control" step="0.01" name="txtTaxa" placeholder="">
                     </div>
                 </div>
 
