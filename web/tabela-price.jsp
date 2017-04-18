@@ -65,7 +65,7 @@
                     <div class="col-sm-2">
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
-                            <input type="number" class="form-control" step="0.01" name="txtValor" placeholder="">
+                            <input type="number" class="form-control" step="0.01" name="txtValor" placeholder="ex: 12000,67">
                         </div>
                     </div>
                 </div>
@@ -74,20 +74,20 @@
                     <div class="col-sm-2">
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
-                            <input type="number" class="form-control" step="0.01" name="txtEntrada" placeholder="">
+                            <input type="number" class="form-control" step="0.01" name="txtEntrada" placeholder="ex: 120,67">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="txtPrestacoes" class="col-sm-2 control-label">Número de prestações</label>
                     <div class="col-sm-2">
-                        <input type="number" class="form-control" name="txtPrestacoes" placeholder="">
+                        <input type="number" class="form-control" name="txtPrestacoes" placeholder="ex: 12">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="txtTaxa" class="col-sm-2 control-label">Taxa de Juros (%a.m.)</label>
                     <div class="col-sm-2">
-                        <input type="number" class="form-control" step="0.01" name="txtTaxa" placeholder="">
+                        <input type="number" class="form-control" step="0.01" name="txtTaxa" placeholder="ex: 12,5">
                     </div>
                 </div>
 
