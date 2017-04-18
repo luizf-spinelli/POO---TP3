@@ -31,20 +31,21 @@
         <%@include file="WEB-INF/jspf/menu.jspf"%>
         <br/><br/><br/>
         <div class="container">
-            <h2>Cálculo Financiamento PRICE</h2><br/>
-            <h5>Cálculo de estimativa de valor de uma prestação a ser paga em um financiamento/empréstimo baseado na tabela PRICE.</h5>
+            <h2>Cálculo Financiamento PRICE</h2>
+            <hr/>
         </div>
-        <br/><br/>
+        
         <%
             TabelaPrice tabelaPrice = null;
             DecimalFormat decimalFormat = new DecimalFormat("#0.00");
             int numeroParcelas = 0;
             double valorParcela = 0;
+            double entrada = 0;
             boolean erro = false;
 
             try {
                 double valor = Double.parseDouble(request.getParameter("txtValor"));
-                double entrada = Double.parseDouble(request.getParameter("txtEntrada"));
+                entrada = (!request.getParameter("txtEntrada").isEmpty()) ? Double.parseDouble(request.getParameter("txtEntrada")) : 0.0;
                 numeroParcelas = Integer.parseInt(request.getParameter("txtPrestacoes"));
                 double taxa = Double.parseDouble(request.getParameter("txtTaxa"));
 
@@ -52,6 +53,7 @@
                 valorParcela = tabelaPrice.calcularParcelas();
             } catch (Exception e) {
                 erro = true;
+                //entrada = 0;
             }
         %>
 
@@ -104,30 +106,28 @@
                 <div class="col-sm-6">
                     <table class="table">
                         <tr>
-                            <th>Mes</th>
+                            <th>Mês</th>
                             <th>Prestação</th>
                             <th>Juros</th>
                             <th>Amortização</th>
                             <th>Saldo devedor</th>
                         </tr>
 
-                        <% for (int i = 0; i < numeroParcelas; i++) {%>
+                        <% for (int i = 0; i <= numeroParcelas; i++) {%>
                         <tr>
-                            <td><%= (i + 1)%></td>
-                            <td><%= decimalFormat.format(valorParcela)%></td>
-                            <td><%= decimalFormat.format(tabelaPrice.calcularJuros())%></td>
-                            <td><%= decimalFormat.format(tabelaPrice.calcularAmortizacao())%></td>
+                            <td><%= (i)%></td>
+                            <td><%= (i != 0) ? decimalFormat.format(valorParcela) : 0.0 %></td>
+                            <td><%= (i != 0) ? decimalFormat.format(tabelaPrice.calcularJuros()) : 0.0 %></td>
+                            <td><%= (i != 0) ? decimalFormat.format(tabelaPrice.calcularAmortizacao()) : 0.0 %></td>
                             <td><%= decimalFormat.format(tabelaPrice.calcularSaldoDevedor())%></td>
                         </tr>
                         <% }%>
                     </table>
                 </div>
                 <div class="col-sm-4">
-                    <span><h4>Saldo devedor: <%= decimalFormat.format(tabelaPrice.getValorPresente())%></h4></span>
-                    <br/>
                     <span><h4>Total prestação: <%= decimalFormat.format(numeroParcelas * valorParcela)%></h4></span>
                     <span><h4>Total juros: <%= decimalFormat.format(tabelaPrice.getTotalJuros())%> </h4></span>
-                    <span><h4>Total amortização: <%= decimalFormat.format(tabelaPrice.getTotalAmortizacao()) %> </h4></span>
+                    <span><h4>Total amortização: <%= decimalFormat.format(tabelaPrice.getTotalAmortizacao())%> </h4></span>
                 </div>
             </div>
         </div>
