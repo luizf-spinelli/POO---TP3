@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
+    
     <title>Sistemas de Amortização</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -17,15 +23,18 @@
     <!-- CUSTOM STYLE CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />    
     <!-- GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    
 </head>
 <body >
+    
     <%@include file="WEB-INF/jspf/menu.jspf"%>
 <br/><br/>
    <!--/.NAVBAR END-->
    <section id="pp_full_res">
+       
    <div class="container" style="text-align:center">
+    
+      
        <h4>Cesar Cesario:</h4><p> Responsável pelo desenvolvimento da página Home</p>
        <h4>Felipe Lima:</h4><p> Responsável pelo desenvolvimento de includes Menu e Rodapé</p>
        <h4>Luiz Spinelli:</h4><p> Responsável pelo desenvolvimento da página SAA e layout padrão.</p>
