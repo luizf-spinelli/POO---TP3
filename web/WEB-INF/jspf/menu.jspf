@@ -16,6 +16,8 @@
                      <li><a href="amortizacao-americano.jsp">Amortização Americano</a></li>
                     <li><a href="amortizacao-constante.jsp">Amortização Constante</a></li>
                      <li><a href="tabela-price.jsp">Tabela Price</a></li>
+                    <li><a href="sobreNos.jsp">Sobre Nós</a></li> 
+                    
                 </ul>
             </div>
            
